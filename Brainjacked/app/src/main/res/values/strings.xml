@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Brainjacked</string>
     <string name="slogan">hijack your brain</string>
+<!--    Translate Activity resources    -->
+    <string name="first_language">First language</string>
+    <string name="second_language">Second language</string>
+    <string name="translate_text_button">HOLD TO TRANSLATE</string>
+    <string-array name="available_language">
+        <item>Polish</item>
+        <item>English</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+    </string-array>
 </resources>
