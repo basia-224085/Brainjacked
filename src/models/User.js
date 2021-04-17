@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 
+const SkillsSchema = mongoose.Schema({
+    
+})
+
 const UsersSchema = mongoose.Schema({
     first_name: {
         type: String,
@@ -27,6 +31,7 @@ const UsersSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    skills: SkillsSchema
     ///TODO REST OF BRAIN RELATED DATA
     
 });
