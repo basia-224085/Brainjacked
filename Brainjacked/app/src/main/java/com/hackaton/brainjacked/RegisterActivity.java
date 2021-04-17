@@ -21,13 +21,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         Button registerButton = findViewById(R.id.register_button);
         registerButton.setOnClickListener(v -> {
-            if(password.getText() != confirmPassword.getText()) {
+            if(!password.getText().toString().equals(confirmPassword.getText().toString())) {
                 toast("Passwords do not match");
             } else if(!implantNr.getText().toString().matches("[0-9]+")) {
                 toast("Implant number must contain only numbers");
             }
             // TODO: add new user to the database
-            // startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, FormActivity.class));
         });
         Button loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(v -> {
