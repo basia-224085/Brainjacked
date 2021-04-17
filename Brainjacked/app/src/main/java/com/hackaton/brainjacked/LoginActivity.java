@@ -7,6 +7,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hackaton.brainjacked.brain.BrainActivity;
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override

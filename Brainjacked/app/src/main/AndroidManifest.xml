@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Brainjacked">
         <activity android:name=".TranslateActivity"
             android:screenOrientation="locked"/>
-        <activity android:name=".BrainActivity" />
+        <activity android:name=".brain.BrainActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".FormActivity" />
         <activity android:name=".RegisterActivity">
