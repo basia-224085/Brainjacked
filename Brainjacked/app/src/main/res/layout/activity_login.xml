@@ -67,16 +67,6 @@
         android:text="LOG IN" />
 
     <Button
-        android:id="@+id/reset_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/transparent"
-        android:text="Forgot password?"
-        android:textAllCaps="false"
-        android:textColor="@color/teal_700" />
-
-    <Button
         android:id="@+id/register_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
