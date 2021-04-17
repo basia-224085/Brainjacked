@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/first_language"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TranslateActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="209dp"
+        android:src="@drawable/translate_image_logo_xd_2" />
+
+    <TextView
+        android:id="@+id/first_language_header"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:text="@string/first_language" />
+
+    <Spinner
+        android:id="@+id/first_language_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/second_language_header"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:text="@string/second_language" />
+
+    <Spinner
+        android:id="@+id/second_language_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/address1"
+        android:layout_width="wrap_content"
+        android:layout_height="216dp"
+        android:gravity="left"
+        android:lines="4"
+        android:maxLines="4"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        android:textSize="18sp"></TextView>
+
+    <Button
+        android:id="@+id/hold_to_translate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/translate_text_button" />
+
+
+</LinearLayout>
