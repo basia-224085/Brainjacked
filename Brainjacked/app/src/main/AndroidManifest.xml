@@ -12,9 +12,14 @@
         <activity android:name=".TranslateActivity"
             android:screenOrientation="locked"/>
         <activity android:name=".brain.BrainActivity" />
-        <activity android:name=".LoginActivity" />
         <activity android:name=".FormActivity" />
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".brain.LogicActivity"/>
+        <activity android:name=".brain.MemoryActivity"/>
+        <activity android:name=".brain.MyBrainActivity"/>
+        <activity android:name=".brain.EmotionsActivity"/>
+        <activity android:name=".brain.LanguagesActivity"/>
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
