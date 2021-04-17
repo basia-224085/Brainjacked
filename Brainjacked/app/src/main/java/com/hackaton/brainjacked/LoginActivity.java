@@ -33,18 +33,21 @@ public class LoginActivity extends AppCompatActivity {
             Login login = new Login(implantNr.getText().toString(), password.getText().toString());
             UserService userService = ServiceGenerator.createService(UserService.class);
             Call<LoginReturn> call = userService.login(login);
-//            call.enqueue(new Callback<LoginReturn>() {
-//                @Override
-//                public void onResponse(Call<LoginReturn> call, Response<LoginReturn> response) {
-//                  //  startActivity(new Intent(LoginActivity.this, BrainActivity.class));
-//                }
-//
-//                @Override
-//                public void onFailure(Call<LoginReturn> call, Throwable t) {
-//                   // Toast.makeText(LoginActivity.this,"Bad credintials",Toast.LENGTH_LONG);
-//                }
-//            });
-            startActivity(new Intent(this, BrainActivity.class));
+            call.enqueue(new Callback<LoginReturn>() {
+                @Override
+                public void onResponse(Call<LoginReturn> call, Response<LoginReturn> response) {
+                    if(response.isSuccessful())
+                        startActivity(new Intent(LoginActivity.this, BrainActivity.class));
+                    else
+                        Toast.makeText(LoginActivity.this,"Bad credintials",Toast.LENGTH_LONG);
+                }
+
+                @Override
+                public void onFailure(Call<LoginReturn> call, Throwable t) {
+                    Toast.makeText(LoginActivity.this,"Bad credintials",Toast.LENGTH_LONG);
+                }
+            });
+            //startActivity(new Intent(this, BrainActivity.class));
         });
         Button registerButton = findViewById(R.id.register_button);
         registerButton.setOnClickListener(v -> {

@@ -96,6 +96,7 @@ public class LanguagesActivity extends AppCompatActivity implements AdapterView.
             String spokenText = results.get(0);
             Toast.makeText(this,spokenText,Toast.LENGTH_LONG);
             translated_text.setText(spokenText);
+            
             // Do something with spokenText.
         }
         super.onActivityResult(requestCode, resultCode, data);
