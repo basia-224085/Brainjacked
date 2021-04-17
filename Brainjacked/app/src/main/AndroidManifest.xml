@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Brainjacked">
-        <activity android:name=".TranslateActivity"
+        <activity android:name=".brain.LanguagesActivity"
             android:screenOrientation="locked"/>
         <activity android:name=".brain.BrainActivity" />
         <activity android:name=".FormActivity" />
@@ -17,7 +17,6 @@
         <activity android:name=".brain.MemoryActivity"/>
         <activity android:name=".brain.MyBrainActivity"/>
         <activity android:name=".brain.EmotionsActivity"/>
-        <activity android:name=".brain.LanguagesActivity"/>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".LoginActivity" >
             <intent-filter>
