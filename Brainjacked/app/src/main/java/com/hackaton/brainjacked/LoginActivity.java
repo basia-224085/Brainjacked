@@ -2,6 +2,7 @@ package com.hackaton.brainjacked;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -36,7 +37,8 @@ public class LoginActivity extends AppCompatActivity {
             call.enqueue(new Callback<LoginReturn>() {
                 @Override
                 public void onResponse(Call<LoginReturn> call, Response<LoginReturn> response) {
-                    if(response.isSuccessful())
+                    Log.e("MY",String.valueOf(response.code()));
+                    if(response.code()==201)
                         startActivity(new Intent(LoginActivity.this, BrainActivity.class));
                     else
                         Toast.makeText(LoginActivity.this,"Bad credintials",Toast.LENGTH_LONG);
