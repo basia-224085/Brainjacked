@@ -1,21 +1,15 @@
 package com.hackaton.brainjacked.services;
 
+import com.hackaton.brainjacked.DTO.Login;
+import com.hackaton.brainjacked.DTO.LoginReturn;
 
-
-import com.hackaton.brainjacked.DTO.BearerToken;
-import com.hackaton.brainjacked.DTO.Person;
-import com.hackaton.brainjacked.DTO.Register;
-
-import java.util.List;
-
-import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.http.*;
+import retrofit2.http.Body;
+import retrofit2.http.POST;
+
 public interface UserService {
 
-    @POST("users")
-    Call<Person> register(@Body Register register);
     @POST("login")
-    Call<BearerToken> login(@Header("Authorization") String basicAuthCredentials);
+    Call<LoginReturn> login(@Body Login basicAuthCredentials);
 
 }
