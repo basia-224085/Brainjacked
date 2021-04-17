@@ -1,0 +1,28 @@
+{
+  "name": "brainjacked",
+  "version": "1.0.0",
+  "description": "awesome app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basia-224085/Brainjacked.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/basia-224085/Brainjacked/issues"
+  },
+  "homepage": "https://github.com/basia-224085/Brainjacked#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.4",
+    "nodemon": "^2.0.7"
+  }
+}
