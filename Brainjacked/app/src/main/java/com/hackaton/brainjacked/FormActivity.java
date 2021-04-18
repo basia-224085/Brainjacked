@@ -1,5 +1,6 @@
 package com.hackaton.brainjacked;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +9,17 @@ import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hackaton.brainjacked.DTO.Emotion;
+import com.hackaton.brainjacked.DTO.Register;
+import com.hackaton.brainjacked.DTO.RegisterReturn;
+import com.hackaton.brainjacked.DTO.Skills;
 import com.hackaton.brainjacked.brain.BrainActivity;
+import com.hackaton.brainjacked.services.ServiceGenerator;
+import com.hackaton.brainjacked.services.UserService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FormActivity extends AppCompatActivity {
     @Override
@@ -66,8 +77,46 @@ public class FormActivity extends AppCompatActivity {
 
             if (pj > 1) letters.fourthLetter = 'p';
             else letters.fourthLetter = 'j';
-            Log.e("MY", String.valueOf(letters.firstLetter + letters.secondLetter+letters.thirdLetter+letters.fourthLetter));
-            startActivity(new Intent(this, BrainActivity.class));
+            Log.e("MY", String.valueOf(letters.firstLetter + letters.secondLetter + letters.thirdLetter + letters.fourthLetter));
+            register(String.valueOf(letters.firstLetter + letters.secondLetter + letters.thirdLetter + letters.fourthLetter));
+            //startActivity(new Intent(this, BrainActivity.class));
+        });
+    }
+
+    private void register(String person) {
+        Register register = new Register();
+        register.setPersonalityType(person.toUpperCase());
+        register.setFirst_name("q");
+        register.setLast_name("q");
+        register.setPassword("q");
+        register.setChip_code("q");
+        register.setDominantHalf("Left");
+        register.setSkills(new Skills(new Emotion()));
+        UserService userService = ServiceGenerator.createService(UserService.class);
+        Call<RegisterReturn> call = userService.register(register);
+        call.enqueue(new Callback<RegisterReturn>() {
+            @Override
+            public void onResponse(Call<RegisterReturn> call, Response<RegisterReturn> response) {
+                Log.e("MY", String.valueOf(response.code()));
+                if (response.code() == 200)
+                    startActivity(new Intent(FormActivity.this, BrainActivity.class));
+                else
+                    new AlertDialog.Builder(FormActivity.this)
+                            .setTitle("Warning")
+                            .setMessage("Soemthing went wrong")
+                            .setNegativeButton(android.R.string.ok, null)
+                            .show();
+
+            }
+
+            @Override
+            public void onFailure(Call<RegisterReturn> call, Throwable t) {
+                new AlertDialog.Builder(FormActivity.this)
+                        .setTitle("Warning")
+                        .setMessage("Soemthing went wrong")
+                        .setNegativeButton(android.R.string.ok, null)
+                        .show();
+            }
         });
     }
 }
