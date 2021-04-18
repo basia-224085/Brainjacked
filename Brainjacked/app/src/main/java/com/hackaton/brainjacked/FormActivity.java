@@ -2,6 +2,7 @@ package com.hackaton.brainjacked;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ToggleButton;
 
@@ -57,15 +58,15 @@ public class FormActivity extends AppCompatActivity {
             if (ei > 1) letters.firstLetter = 'e';
             else letters.firstLetter = 'i';
 
-            if (ns > 1) letters.firstLetter = 'n';
-            else letters.firstLetter = 's';
+            if (ns > 1) letters.secondLetter = 'n';
+            else letters.secondLetter = 's';
 
-            if (tf > 1) letters.firstLetter = 't';
-            else letters.firstLetter = 'f';
+            if (tf > 1) letters.thirdLetter = 't';
+            else letters.thirdLetter = 'f';
 
-            if (pj > 1) letters.firstLetter = 'p';
-            else letters.firstLetter = 'j';
-
+            if (pj > 1) letters.fourthLetter = 'p';
+            else letters.fourthLetter = 'j';
+            Log.e("MY", String.valueOf(letters.firstLetter + letters.secondLetter+letters.thirdLetter+letters.fourthLetter));
             startActivity(new Intent(this, BrainActivity.class));
         });
     }

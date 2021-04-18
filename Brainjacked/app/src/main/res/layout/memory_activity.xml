@@ -42,5 +42,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/load_brain_button"
+        android:layout_width="253dp"
+        android:layout_height="226dp"
+        android:text="Load to...\n Your brain"
+
+        android:background="@drawable/rounded"
+android:layout_marginBottom="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
