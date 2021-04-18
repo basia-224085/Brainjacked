@@ -42,7 +42,12 @@ public class LanguagesActivity extends AppCompatActivity implements AdapterView.
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         first_language_spinner.setAdapter(adapter);
-        second_language_spinner.setAdapter(adapter);
+
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
+                R.array.available_language_second, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        second_language_spinner.setAdapter(adapter2);
 
         record_text.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -60,16 +65,20 @@ public class LanguagesActivity extends AppCompatActivity implements AdapterView.
             }
         });
 
+        new AlertDialog.Builder(LanguagesActivity.this)
+                .setTitle("!!! Warning !!!")
+                .setMessage("Premium function... \nSend to us 10 HARNOLDS ;) to received translation to other languages")
+                .setNegativeButton(android.R.string.ok, null)
+                .setIcon(R.drawable.harnold)
+                .setPositiveButton("Try premium",null)
+                .show();
+
 
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        new AlertDialog.Builder(LanguagesActivity.this)
-                .setTitle("Warning")
-                .setMessage("Please input correct credintials")
-                .setNegativeButton(android.R.string.ok, null)
-                .show();
+
     }
 
     @Override
@@ -97,13 +106,7 @@ public class LanguagesActivity extends AppCompatActivity implements AdapterView.
                     RecognizerIntent.EXTRA_RESULTS);
             String spokenText = results.get(0);
             translated_text.setText(spokenText);
-            new AlertDialog.Builder(LanguagesActivity.this)
-                    .setTitle("!!! Warning !!!")
-                    .setMessage("Premium function... \nSend to us 10 HARNOLDS ;) ")
-                    .setNegativeButton(android.R.string.ok, null)
-                    .setIcon(R.drawable.harnold)
-                    .setPositiveButton("Try premium",null)
-                    .show();
+
             
             // Do something with spokenText.
         }

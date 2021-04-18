@@ -6,6 +6,14 @@
     <string name="second_language">Second language</string>
     <string name="translate_text_button">HOLD TO TRANSLATE</string>
     <string-array name="available_language">
+        <item>Thoughts</item>
+        <item>Polish</item>
+        <item>English</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+    </string-array>
+    <string-array name="available_language_second">
+        <item>Words</item>
         <item>Polish</item>
         <item>English</item>
         <item>Italian</item>
