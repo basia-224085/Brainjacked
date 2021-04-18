@@ -59,6 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
                 Log.e("MY", String.valueOf(response.code()));
                 if (response.code() == 201) {
                     Intent intent = new Intent(getBaseContext(), FormActivity.class);
+                    intent.putExtra("name",response.body().getFirst_name());
+                    intent.putExtra("lastName",response.body().getLast_name());
                     intent.putExtra("chip", implantNr);
                     intent.putExtra("pass", password);
                     startActivity(intent);
