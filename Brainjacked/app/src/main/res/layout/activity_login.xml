@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="254dp"
+        android:layout_height="275dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/logo"
-        android:src="@drawable/ic_launcher_foreground" />
+        android:src="@drawable/logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textSize="50sp"
+        android:textColor="@color/black"
         android:textStyle="bold" />
 
     <TextView
@@ -26,6 +27,7 @@
         android:layout_marginBottom="30dp"
         android:text="@string/slogan"
         android:textSize="20sp"
+        android:textColor="@color/black"
         android:textStyle="italic" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -75,4 +77,47 @@
         android:textAllCaps="false"
         android:textColor="@color/teal_700"
         android:textSize="13sp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="62dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/brainy_my_brain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="78dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="304dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/memory_brainy"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="74dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="116dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/languages_brainy"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="70dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="212dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/focused"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

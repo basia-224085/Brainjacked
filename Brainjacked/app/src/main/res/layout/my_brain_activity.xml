@@ -42,43 +42,92 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/letter_pic"
+        android:layout_width="105dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="240dp"
+        android:src="@drawable/e"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/letter_pic3"
+        android:layout_width="102dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="468dp"
+        android:src="@drawable/s"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/letter_pic4"
+        android:layout_width="105dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="596dp"
+        android:src="@drawable/p"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/letter_pic2"
+        android:layout_width="107dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="340dp"
+        android:src="@drawable/t"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/first_letter"
-        android:layout_width="408dp"
-        android:layout_height="88dp"
+        android:layout_width="268dp"
+        android:layout_height="95dp"
         android:layout_marginTop="248dp"
         android:layout_marginEnd="4dp"
-        android:textSize="25sp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Extroverts are often described as happy, positive, cheerful, and sociable. They aren't as likely to dwell on problems or ponder difficulties."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/second_letter"
-        android:layout_width="408dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="376dp"
-        android:layout_marginEnd="4dp"
-        android:textSize="25sp"
+        android:layout_width="262dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="368dp"
+        android:text="Thinking means that you make a decision mainly through logic."
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/third_letter"
-        android:layout_width="408dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="508dp"
+        android:layout_width="255dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="488dp"
         android:layout_marginEnd="4dp"
-        android:textSize="25sp"
+        android:text="Sensing means that you mainly believe information you receive directly from the external world."
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fourth_letter"
-        android:layout_width="408dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="640dp"
-        android:layout_marginEnd="4dp"
-        android:textSize="25sp"
+        android:layout_width="248dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="612dp"
+        android:layout_marginEnd="136dp"
+        android:text="Perceiving means that you are inclined to improvise and explore alternative options."
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

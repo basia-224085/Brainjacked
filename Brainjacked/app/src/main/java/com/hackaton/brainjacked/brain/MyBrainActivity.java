@@ -20,6 +20,6 @@ public class MyBrainActivity extends AppCompatActivity {
         TextView thirdLetter = findViewById(R.id.third_letter);
         TextView fourthLetter = findViewById(R.id.fourth_letter);
 
-        firstLetter.setText("Extrovert");
+
     }
 }
