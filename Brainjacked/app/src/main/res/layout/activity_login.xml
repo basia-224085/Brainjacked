@@ -10,7 +10,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/ic_launcher_background"
+        android:background="@drawable/logo"
         android:src="@drawable/ic_launcher_foreground" />
 
     <TextView
