@@ -26,6 +26,15 @@ public class FormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+        String chip= null , pass = null;
+
+        try{
+            Bundle bundle = getIntent().getExtras();
+            chip = (bundle.getString("chip"));
+            pass = (bundle.getString("pass"));
+        }catch (Exception e){
+
+        }
 
         ToggleButton EI = findViewById(R.id.e_i);
         ToggleButton EI2 = findViewById(R.id.e_i2);
@@ -44,6 +53,8 @@ public class FormActivity extends AppCompatActivity {
         ToggleButton PJ3 = findViewById(R.id.p_j3);
 
         Button finishForm = findViewById(R.id.finish_form);
+        String finalPass = pass;
+        String finalChip = chip;
         finishForm.setOnClickListener(v -> {
             int ei = 0;
             if (EI.isChecked()) ei++;
@@ -78,18 +89,18 @@ public class FormActivity extends AppCompatActivity {
             if (pj > 1) letters.fourthLetter = 'p';
             else letters.fourthLetter = 'j';
             Log.e("MY", String.valueOf(letters.firstLetter + letters.secondLetter + letters.thirdLetter + letters.fourthLetter));
-            register(String.valueOf(letters.firstLetter + letters.secondLetter + letters.thirdLetter + letters.fourthLetter));
+            register(String.valueOf(letters.firstLetter + letters.secondLetter + letters.thirdLetter + letters.fourthLetter), finalChip, finalPass);
             //startActivity(new Intent(this, BrainActivity.class));
         });
     }
 
-    private void register(String person) {
+    private void register(String person, String chip, String pass) {
         Register register = new Register();
         register.setPersonalityType(person.toUpperCase());
         register.setFirst_name("q");
         register.setLast_name("q");
-        register.setPassword("q");
-        register.setChip_code("q");
+        register.setPassword(pass);
+        register.setChip_code(chip);
         register.setDominantHalf("Left");
         register.setSkills(new Skills(new Emotion()));
         UserService userService = ServiceGenerator.createService(UserService.class);

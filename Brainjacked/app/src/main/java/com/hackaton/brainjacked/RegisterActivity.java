@@ -27,7 +27,10 @@ public class RegisterActivity extends AppCompatActivity {
                 toast("Implant number must contain only numbers");
             }
             // TODO: add new user to the database
-            startActivity(new Intent(this, FormActivity.class));
+            Intent intent = new Intent(this, FormActivity.class);
+            intent.putExtra("chip",implantNr.getText().toString());
+            intent.putExtra("pass", confirmPassword.getText().toString());
+            startActivity(intent);
         });
         Button loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(v -> {
