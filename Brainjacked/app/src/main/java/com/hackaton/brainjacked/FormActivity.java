@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -113,8 +114,11 @@ public class FormActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<RegisterReturn> call, Response<RegisterReturn> response) {
                 Log.e("MY", String.valueOf(response.code()));
-                if (response.code() == 200)
+                if (response.code() == 200) {
+                    String welcomeMessage = "Welcome to Brainjacked " + name + " " + lastName;
+                    Toast.makeText(getBaseContext(), welcomeMessage, Toast.LENGTH_LONG).show();
                     startActivity(new Intent(FormActivity.this, BrainActivity.class));
+                }
                 else
                     new AlertDialog.Builder(FormActivity.this)
                             .setTitle("Warning")
