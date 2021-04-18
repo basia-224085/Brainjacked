@@ -115,7 +115,7 @@ public class FormActivity extends AppCompatActivity {
             public void onResponse(Call<RegisterReturn> call, Response<RegisterReturn> response) {
                 Log.e("MY", String.valueOf(response.code()));
                 if (response.code() == 200) {
-                    String welcomeMessage = "Welcome to Brainjacked " + name + " " + lastName;
+                    String welcomeMessage = "Welcome to Brainjacked \n" + name + " " + lastName;
                     Toast.makeText(getBaseContext(), welcomeMessage, Toast.LENGTH_LONG).show();
                     startActivity(new Intent(FormActivity.this, BrainActivity.class));
                 }

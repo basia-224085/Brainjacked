@@ -36,7 +36,6 @@ public class RegisterActivity extends AppCompatActivity {
             if (!pass.equals(confirmPassword.getText().toString())) {
                 toast("Passwords do not match");
             }
-
             registerIfUserIsHuman(chip, pass);
         });
         Button loginButton = findViewById(R.id.login_button);

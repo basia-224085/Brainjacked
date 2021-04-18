@@ -39,8 +39,11 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<LoginReturn> call, Response<LoginReturn> response) {
                     Log.e("MY",String.valueOf(response.code()));
-                    if(response.code()==201)
+                    if(response.code()==201) {
+                        String welcomeMessage = "Welcome to Brainjacked \n" + response.body().getFirst_name() + " " + response.body().getLast_name();
+                        Toast.makeText(getBaseContext(), welcomeMessage, Toast.LENGTH_LONG).show();
                         startActivity(new Intent(LoginActivity.this, BrainActivity.class));
+                    }
                     else
                         new AlertDialog.Builder(LoginActivity.this)
                                 .setTitle("Warning")
