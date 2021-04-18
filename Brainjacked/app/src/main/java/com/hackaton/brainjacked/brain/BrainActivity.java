@@ -11,6 +11,7 @@ import com.hackaton.brainjacked.R;
 
 public class BrainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

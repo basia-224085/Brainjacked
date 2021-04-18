@@ -1,11 +1,11 @@
 package com.hackaton.brainjacked;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -82,17 +82,17 @@ public class FormActivity extends AppCompatActivity {
             if (PJ3.isChecked()) pj++;
 
             Personality.Letters letters = new Personality.Letters();
-            if (ei > 1) letters.firstLetter = 'e';
-            else letters.firstLetter = 'i';
+            if (ei > 1) letters.firstLetter = "e";
+            else letters.firstLetter = "i";
 
-            if (ns > 1) letters.secondLetter = 'n';
-            else letters.secondLetter = 's';
+            if (ns > 1) letters.secondLetter = "n";
+            else letters.secondLetter = "s";
 
-            if (tf > 1) letters.thirdLetter = 't';
-            else letters.thirdLetter = 'f';
+            if (tf > 1) letters.thirdLetter = "t";
+            else letters.thirdLetter = "f";
 
-            if (pj > 1) letters.fourthLetter = 'p';
-            else letters.fourthLetter = 'j';
+            if (pj > 1) letters.fourthLetter = "p";
+            else letters.fourthLetter = "j";
             Log.e("MY", String.valueOf(letters.firstLetter + letters.secondLetter + letters.thirdLetter + letters.fourthLetter));
             register(String.valueOf(letters.firstLetter + letters.secondLetter + letters.thirdLetter + letters.fourthLetter), finalChip, finalPass, finalName, finalLastName);
             //startActivity(new Intent(this, BrainActivity.class));
@@ -111,13 +111,22 @@ public class FormActivity extends AppCompatActivity {
         UserService userService = ServiceGenerator.createService(UserService.class);
         Call<RegisterReturn> call = userService.register(register);
         call.enqueue(new Callback<RegisterReturn>() {
+
+
             @Override
             public void onResponse(Call<RegisterReturn> call, Response<RegisterReturn> response) {
                 Log.e("MY", String.valueOf(response.code()));
                 if (response.code() == 200) {
-                    String welcomeMessage = "Welcome to Brainjacked \n" + name + " " + lastName;
-                    Toast.makeText(getBaseContext(), welcomeMessage, Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(FormActivity.this, BrainActivity.class));
+                    String welcomeMessage = "Welcome " + name + " " + lastName;
+                    new AlertDialog.Builder(FormActivity.this)
+                            .setTitle(welcomeMessage)
+                            .setMessage("Your dominant half of Brain is Left"+ "\nYour personality type is "+person.toUpperCase())
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    startActivity(new Intent(FormActivity.this, BrainActivity.class));
+                                }
+                            })
+                            .show();
                 }
                 else
                     new AlertDialog.Builder(FormActivity.this)
@@ -136,6 +145,7 @@ public class FormActivity extends AppCompatActivity {
                         .setNegativeButton(android.R.string.ok, null)
                         .show();
             }
+
         });
     }
 }
