@@ -35,9 +35,8 @@ public class RegisterActivity extends AppCompatActivity {
             String chip = implantNr.getText().toString();
             if (!pass.equals(confirmPassword.getText().toString())) {
                 toast("Passwords do not match");
-            } else if (!chip.matches("[0-9]+")) {
-                toast("Implant number must contain only numbers");
             }
+
             registerIfUserIsHuman(chip, pass);
         });
         Button loginButton = findViewById(R.id.login_button);
