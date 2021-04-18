@@ -1,5 +1,6 @@
 package com.hackaton.brainjacked;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,12 +42,21 @@ public class LoginActivity extends AppCompatActivity {
                     if(response.code()==201)
                         startActivity(new Intent(LoginActivity.this, BrainActivity.class));
                     else
-                        Toast.makeText(LoginActivity.this,"Bad credintials",Toast.LENGTH_LONG);
+                        new AlertDialog.Builder(LoginActivity.this)
+                                .setTitle("Warning")
+                                .setMessage("Please input correct credintials")
+                                .setNegativeButton(android.R.string.ok, null)
+                                .show();
+
                 }
 
                 @Override
                 public void onFailure(Call<LoginReturn> call, Throwable t) {
-                    Toast.makeText(LoginActivity.this,"Bad credintials",Toast.LENGTH_LONG);
+                    new AlertDialog.Builder(LoginActivity.this)
+                            .setTitle("Warning")
+                            .setMessage("Please input correct credintials")
+                            .setNegativeButton(android.R.string.ok, null)
+                            .show();
                 }
             });
             //startActivity(new Intent(this, BrainActivity.class));

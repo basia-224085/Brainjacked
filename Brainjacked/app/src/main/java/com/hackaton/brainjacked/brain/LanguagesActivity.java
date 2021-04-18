@@ -1,8 +1,8 @@
 package com.hackaton.brainjacked.brain;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hackaton.brainjacked.LoginActivity;
 import com.hackaton.brainjacked.R;
 
 import java.util.List;
@@ -64,10 +65,11 @@ public class LanguagesActivity extends AppCompatActivity implements AdapterView.
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Choose")
-                .setTitle("asdasdasd");
-        AlertDialog dialog = builder.create();
+        new AlertDialog.Builder(LanguagesActivity.this)
+                .setTitle("Warning")
+                .setMessage("Please input correct credintials")
+                .setNegativeButton(android.R.string.ok, null)
+                .show();
     }
 
     @Override
@@ -94,8 +96,14 @@ public class LanguagesActivity extends AppCompatActivity implements AdapterView.
             List<String> results = data.getStringArrayListExtra(
                     RecognizerIntent.EXTRA_RESULTS);
             String spokenText = results.get(0);
-            Toast.makeText(this,spokenText,Toast.LENGTH_LONG);
             translated_text.setText(spokenText);
+            new AlertDialog.Builder(LanguagesActivity.this)
+                    .setTitle("!!! Warning !!!")
+                    .setMessage("Premium function... \nSend to us 10 HARNOLDS ;) ")
+                    .setNegativeButton(android.R.string.ok, null)
+                    .setIcon(R.drawable.harnold)
+                    .setPositiveButton("Try premium",null)
+                    .show();
             
             // Do something with spokenText.
         }
