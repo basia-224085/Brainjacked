@@ -6,49 +6,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#BFEDEF"
     tools:context=".brain.LanguagesActivity">
-
-    <ImageView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="209dp"
-        android:src="@drawable/translate_image_logo_xd_2" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="209dp"
+            android:background="@drawable/boarder_blue"
+            android:paddingVertical="20dp"
+            android:paddingLeft="150dp"
+            android:src="@drawable/languages_brainy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="184dp"
+            android:layout_height="135dp"
+            android:src="@drawable/info_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.662" />
+
+        <TextView
+            android:layout_width="92dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="4dp"
+            android:text="Teach your tongue another language"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/first_language_header"
         android:layout_width="match_parent"
         android:layout_height="28dp"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:text="@string/first_language" />
 
     <Spinner
         android:id="@+id/first_language_spinner"
         android:layout_width="match_parent"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/second_language_header"
         android:layout_width="match_parent"
         android:layout_height="28dp"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:text="@string/second_language" />
 
     <Spinner
         android:id="@+id/second_language_spinner"
         android:layout_width="match_parent"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/translated_text"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="216dp"
         android:gravity="left"
         android:lines="4"
+        android:layout_margin="10dp"
         android:maxLines="4"
-        android:text="Your translated Thoughts..."
         android:textSize="18sp"></TextView>
 
     <Button
         android:id="@+id/hold_to_translate"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:backgroundTint="#08A0B5"
+        android:textStyle="bold"
         android:text="@string/translate_text_button" />
 
 
